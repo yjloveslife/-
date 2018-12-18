@@ -1,7 +1,3 @@
-// emp.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌÐòµÄÈë¿Úµã¡£
-//
-
-#include "stdafx.h"
 #include"iostream"
 #include"fstream"
 #include"string"
@@ -32,17 +28,17 @@ public:
 	}
 	void input()
 	{
-		cout<<"ÊäÈëÐÕÃû:";
+		cout<<"è¾“å…¥å§“å:";
 		cin>>name;
-		cout<<"ÊäÈë¹¤ºÅ:";
+		cout<<"è¾“å…¥å·¥å·:";
 		cin>>num;
-		cout<<"ÊäÈëÐÔ±ð:";
+		cout<<"è¾“å…¥æ€§åˆ«:";
 		cin>>sex;
-		cout<<"ÊäÈë¼®¹á:";
+		cout<<"è¾“å…¥ç±è´¯:";
 		cin>>jg;
-		cout<<"ÊäÈë²¿ÃÅ:";
+		cout<<"è¾“å…¥éƒ¨é—¨:";
 		cin>>bumeng;
-		cout<<"ÊäÈë¹¤×Ê:";
+		cout<<"è¾“å…¥å·¥èµ„:";
 		cin>>money;
 	}
 	string getname()
@@ -68,7 +64,7 @@ public:
 	list(){
 		head=end=new node;
 		head->next=NULL;
-	}//Í·½áµã½¨Á¢.
+	}//å¤´ç»“ç‚¹å»ºç«‹.
 	void creat(int a)
 	{
 		
@@ -88,12 +84,12 @@ public:
 	{
 		node *p;
 		p=(head->next);
-		cout<<"\nÊäÈëÊý¾Ý.\n"<<endl;
+		cout<<"\nè¾“å…¥æ•°æ®.\n"<<endl;
 		for(;p!=NULL;p=p->next)
 		{
 			p->e1.input();
 		}
-		cout<<"Íê³É!"<<endl;
+		cout<<"å®Œæˆ!"<<endl;
 		
 	}
 	void output()
@@ -114,7 +110,7 @@ public:
 		for(;p!=NULL;p=p->next)
 			fout.write((char *)&(p->e1),sizeof(p->e1));
 		fout.close();
-		cout<<"\nÊý¾ÝÒÑ±£´æ\n"<<endl;
+		cout<<"\næ•°æ®å·²ä¿å­˜\n"<<endl;
 	}
 	void load()
 	{
@@ -124,7 +120,7 @@ public:
 		return;}
 		node *first,*newnode,*tail;
 		first=tail=head;
-		while(fin.peek()!=EOF)//Î´Ö¸µ½ÎÄ¼þÎ²  Ö´ÐÐ
+		while(fin.peek()!=EOF)//æœªæŒ‡åˆ°æ–‡ä»¶å°¾  æ‰§è¡Œ
 		{
 			newnode =new node;
 		    newnode->next=NULL;
@@ -135,13 +131,13 @@ public:
 		end=tail;
 		fin.close();
 
-		cout<<"\nÒÑ¶ÁÈ¡ÎÄ¼þÊý¾Ý\n"<<endl;
+		cout<<"\nå·²è¯»å–æ–‡ä»¶æ•°æ®\n"<<endl;
 
 	}
 	void del()
 	{
 		int a;
-		cout<<"°´1.ÐÕÃû»ò2.¹¤ºÅ²éÕÒ²¢É¾³ý";
+		cout<<"æŒ‰1.å§“åæˆ–2.å·¥å·æŸ¥æ‰¾å¹¶åˆ é™¤";
 		node *p=head;
 		string pp;
 		cin>>a;
@@ -149,7 +145,7 @@ public:
 		{
 		case 1:
 			
-				cout<<"ÐÕÃû:";
+				cout<<"å§“å:";
 				cin>>pp;
 				for(;p->next!=NULL;p=p->next)
 				{
@@ -161,7 +157,7 @@ public:
 				}
 			break;
 		case 2:
-			cout<<"¹¤ºÅ:";
+			cout<<"å·¥å·:";
 			int num1;
 				cin>>num1;
 				for(;p->next!=NULL;p=p->next)
@@ -178,7 +174,7 @@ public:
 	void add()
 	{
 		int a;
-		cout<<"Ìí¼Ó¼¸¸öÊý¾Ý";
+		cout<<"æ·»åŠ å‡ ä¸ªæ•°æ®";
 		cin>>a;
 		node *p=head->next,*newnode,*tail=end;
 		for(int i=0;i<a;i++)
@@ -190,14 +186,14 @@ public:
 			tail->e1.input();
 		}
 		end=tail;
-		cout<<"Íê³É"<<endl;
+		cout<<"å®Œæˆ"<<endl;
 	}
 	void gai()
 	{
 		
 	{
 		int a;
-		cout<<"°´1.ÐÕÃû»ò2.¹¤ºÅ²éÕÒÐÞ¸Ä";
+		cout<<"æŒ‰1.å§“åæˆ–2.å·¥å·æŸ¥æ‰¾ä¿®æ”¹";
 		node *p=head->next;
 		string pp;
 		int num1;
@@ -205,7 +201,7 @@ public:
 		switch(a)
 		{
 		case 1:
-				cout<<"ÐÕÃû:";
+				cout<<"å§“å:";
 				cin>>pp;
 				for(;p!=NULL;p=p->next)
 				{
@@ -213,32 +209,32 @@ public:
 					{
 						int f;
 						string AA;
-						cout<<"\n1.¹¤ºÅ\t2.ÐÔ±ð\n3.¼®¹á\t4.²¿ÃÅ\n5.¹¤×Ê\nÊäÈëÐÞ¸ÄÏî:";
+						cout<<"\n1.å·¥å·\t2.æ€§åˆ«\n3.ç±è´¯\t4.éƒ¨é—¨\n5.å·¥èµ„\nè¾“å…¥ä¿®æ”¹é¡¹:";
 						cin>>f;
 						switch(f)
 						{
 						case 1:
-							cout<<"new¹¤ºÅ";
+							cout<<"newå·¥å·";
 							cin>>num1;
 							p->e1.c_num(num1);
 							break;
 						case 2:
-							cout<<"newÐÔ±ð";
+							cout<<"newæ€§åˆ«";
 							cin>>pp;
 							p->e1.c_sex(pp);
 							break;
 						case 3:
-							cout<<"new¼®¹á";
+							cout<<"newç±è´¯";
 							cin>>pp;
 							p->e1.c_jg(pp);
 							break;
 						case 4:
-							cout<<"new²¿ÃÅ";
+							cout<<"newéƒ¨é—¨";
 							cin>>pp;
 							p->e1.c_bumeng(pp);
 							break;
 						case 5:
-							cout<<"new¹¤×Ê";
+							cout<<"newå·¥èµ„";
 							cin>>pp;
 							p->e1.c_money(pp);
 							break;
@@ -248,7 +244,7 @@ public:
 				}
 			break;
 		case 2:
-			cout<<"¹¤ºÅ:";
+			cout<<"å·¥å·:";
 				cin>>num1;
 				for(;p!=NULL;p=p->next)
 				{
@@ -256,32 +252,32 @@ public:
 					{
 						int f;
 						string AA;
-						cout<<"\n1.ÐÕÃû\t2.ÐÔ±ð\n3.¼®¹á\t4.²¿ÃÅ\n5.¹¤×Ê\nÊäÈëÐÞ¸ÄÏî:";
+						cout<<"\n1.å§“å\t2.æ€§åˆ«\n3.ç±è´¯\t4.éƒ¨é—¨\n5.å·¥èµ„\nè¾“å…¥ä¿®æ”¹é¡¹:";
 						cin>>f;
 						switch(f)
 						{
 						case 1:
-							cout<<"newÐÕÃû";
+							cout<<"newå§“å";
 							cin>>pp;
 							p->e1.c_name(pp);
 							break;
 						case 2:
-							cout<<"newÐÔ±ð";
+							cout<<"newæ€§åˆ«";
 							cin>>pp;
 							p->e1.c_sex(pp);
 							break;
 						case 3:
-							cout<<"new¼®¹á";
+							cout<<"newç±è´¯";
 							cin>>pp;
 							p->e1.c_jg(pp);
 							break;
 						case 4:
-							cout<<"new²¿ÃÅ";
+							cout<<"newéƒ¨é—¨";
 							cin>>pp;
 							p->e1.c_bumeng(pp);
 							break;
 						case 5:
-							cout<<"new¹¤×Ê";
+							cout<<"newå·¥èµ„";
 							cin>>pp;
 							p->e1.c_money(pp);
 							break;
@@ -300,13 +296,13 @@ int _tmain(int argc, _TCHAR* argv[])
 	list a;
 	while(1)
 	{
-		cout<<"0.´´½¨Á´±í²¢ÊäÈë\n1.ÊäÈë»ò¸²¸Ç\t2.Êä³ö\n3.Ìí¼Ó\t4.ÐÞ¸Ä\n5.É¾³ý\t6.ÍË³ö\n7.±£´æ\t8.¶ÁÈ¡(»á¸²¸ÇÔ­Ê¼Êý¾Ý!)"<<endl;
-		cout<<"ÊäÈë²Ù×÷¹¦ÄÜ:";
+		cout<<"0.åˆ›å»ºé“¾è¡¨å¹¶è¾“å…¥\n1.è¾“å…¥æˆ–è¦†ç›–\t2.è¾“å‡º\n3.æ·»åŠ \t4.ä¿®æ”¹\n5.åˆ é™¤\t6.é€€å‡º\n7.ä¿å­˜\t8.è¯»å–(ä¼šè¦†ç›–åŽŸå§‹æ•°æ®!)"<<endl;
+		cout<<"è¾“å…¥æ“ä½œåŠŸèƒ½:";
 		cin>>flag;
 		switch(flag)
 		{
 		case 0:
-			cout<<"¼¸¸öÔ±¹¤ÐÅÏ¢:";
+			cout<<"å‡ ä¸ªå‘˜å·¥ä¿¡æ¯:";
 			cin>>A;
 			a.creat(A);
 			a.input();
