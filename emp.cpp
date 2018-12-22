@@ -290,7 +290,7 @@ public:
 	}
 	}
 };
-int _tmain(int argc, _TCHAR* argv[])
+int main()
 {
 	int flag=0,A;
 	list a;
